@@ -1,0 +1,82 @@
+[
+  {
+    "account": "BCE456",
+    "name": "JohnDoe",
+    "purchase_history": [
+      {
+      "month": "Month01",
+      "transitions": [
+        {
+        "date": "01/01/2010",
+        "purchase": 120
+      },
+      {
+        "date": "01/01/2010",
+        "purchase": 120
+      },
+      {
+        "date": "01/01/2010",
+        "purchase": 120
+      }
+    ]
+    },
+    {
+      "month": "Month02",
+      "transitions": [
+        {
+        "date": "01/01/2010",
+        "purchase": 120
+      },
+      {
+        "date": "01/01/2010",
+        "purchase": 120
+      },
+      {
+        "date": "01/01/2010",
+        "purchase": 120
+      }
+    ]
+    }
+  ]
+  },
+  {
+    "account": "ABC123",
+    "name": "JohnDoe",
+    "purchase_history": [
+      {
+      "month": "Month01",
+      "transitions": [
+        {
+        "date": "01/01/2010",
+        "purchase": 120
+      },
+      {
+        "date": "01/01/2010",
+        "purchase": 120
+      },
+      {
+        "date": "01/01/2010",
+        "purchase": 120
+      }
+    ]
+    },
+    {
+      "month": "Month02",
+      "transitions": [
+        {
+        "date": "01/01/2010",
+        "purchase": 120
+      },
+      {
+        "date": "01/01/2010",
+        "purchase": 120
+      },
+      {
+        "date": "01/01/2010",
+        "purchase": 120
+      }
+    ]
+    }
+  ]
+  }
+]
