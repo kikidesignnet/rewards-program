@@ -5,49 +5,70 @@ export default class purchaseMonth extends Component {
   constructor(props) {
     super(props);
       this.state = {
-        transitionArr: this.props.transitions,
-        monthListSum: {},
+        // transitionArr: this.props.transitions,
+        transitionArr: this.newTransArray(),
+        monthListSum: [],
         totalRewardsMonth: 0
     };
   }
 
-  TotalMonthRewards = i => totalRewardsM => {
-    // console.log("Month Reward T", totalRewardsM);
-    let monthListSum = {
-      ...this.state.monthListSum,
-      [i]: totalRewardsM
+  calculateRewards = (purchased) => {
+    let totalRewards = 0;
+    if(purchased > 100) {
+      totalRewards = ((purchased - 100) * 2) + 50;
+    } else if (50 < purchased && purchased < 100) {
+      totalRewards = purchased - 50;
     }
-    let totalRewardsMonth = 0;
-    Object.keys(monthListSum).forEach(key => {
-      totalRewardsMonth += monthListSum[key]
+    return totalRewards;
+  }
+
+  newTransArray = () => {
+    let newtransArr = this.props.transitions;
+    let ntranstArr = newtransArr.map((trans) => {
+      return {...trans, rewardpoints: this.calculateRewards(trans.purchase)}
     })
-    this.setState({
-      monthListSum,
-      totalRewardsMonth
-    });
-    // let totalRewardlMonth = 0;
-    // totalRewardlMonth += totalRewardsM;
-    // this.setState({
-    //   totalRewardsMonth: totalRewardlMonth
-    // })
-    // console.log("totalRewardsMonth", this.state.totalRewardsMonth);
-  };
+    return ntranstArr;
+  }
+
+  totalRewardsMonth = () => {
+    let RewardsArr = [...this.state.transitionArr];
+    let filterRewardArr = RewardsArr.map((reward) => reward.rewardpoints).reduce((a, b) => a + b);
+    // console.log("rewardArray", filterRewardArr);
+    return filterRewardArr;
+  }
 
   render() {
     const transitionList = this.state.transitionArr;
+
+    console.log("new Transition Arr", this.state.transitionArr);
+
     return (
-      <div>
-        <h2>{this.props.month}</h2>
-        {/* <h3>{this.state.totalRewardsMonth}</h3> */}
+      <div className="month-card">
         <div>
-        {transitionList.map((eachTransition, i) => (
-          <RewardsCard
-          {...eachTransition}
-          key={i}
-          purchased={eachTransition.purchase}
-          rewardsPoints={this.TotalMonthRewards(i)}
-          />
-        ))}
+          <div className="month-title">
+            <h2>{this.props.month}</h2>
+            <h3>Total Reward Points: {this.totalRewardsMonth()}</h3>
+          </div>
+          <hr className="title-line" />
+        </div>
+        <div>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Purchase</th>
+              <th className="fit">Reward Points</th>
+            </tr>
+          </thead>
+          <tbody>
+          {transitionList.map((eachTransition) => (
+            <RewardsCard
+            {...eachTransition}
+            key={eachTransition.id}
+            />
+          ))}
+          </tbody>
+        </table>
         </div>
       </div>
     )

@@ -40,19 +40,17 @@ class customerRewards extends Component {
     return (
       <div >
         <div className="container">
-          <div className="row">
-            <div className="col-md-10 m-auto">
+          <div>
+            <div className="back-btn">
               <br /> <br />
-              <Link to="/" className="btn btn-outline-warning float-left">
+              <Link to="/" className="btn btn-outline-success">
                   Back
               </Link>
             </div>
             <br />
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Hello {customerRewards.name}</h1>
-              <p className="lead text-center">
-                  {customerRewards.account}
-              </p>
+            <div className="single-customer-title">
+              <h4>#{customerRewards.account}</h4>
+              <h2 className="display-4">{customerRewards.name}</h2>
               <hr /> <br />
             </div>
           </div>

@@ -9,9 +9,8 @@ const CustomerCard = (props) => {
       <tr>
         <td>{customerCard.account}</td>
         <td>{customerCard.name}</td>
-        <td>
-          <Link to={`/${customerCard.account}`}>view</Link>
-          {/* <Link to={`/${customerCard._id}`}>view</Link> */}
+        <td className="fit">
+          <Link className="btn btn-outline-primary" to={`/${customerCard.account}`}>view</Link>
         </td>
       </tr>
     )

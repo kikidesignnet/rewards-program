@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+html, body {
+  background-color: #ffffff;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+hr {
+  margin-top: 0.3rem;
 }
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #0078ae;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.customer-list {
+  padding: 50px 0;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.customer-title {
+  margin-bottom: 50px;
+}
+.customer-title h2, .single-customer-title h4 {
+  color: #0078ae;
+}
+hr.title-line {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.table th {
+  border-top: none;
+}
+.back-btn {
+  margin-bottom: 30px;
+}
+.single-customer-title {
+  display: block;
+  /* justify-content: space-between; */
+  /* align-items: baseline; */
+}
+.month-card {
+  margin-bottom: 20px;
+}
+.month-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.month-title h3 {
+  color: #0086c2;
+}
+.table td.fit, 
+.table th.fit {
+    white-space: nowrap;
+    width: 10%;
+    text-align: right;
 }
